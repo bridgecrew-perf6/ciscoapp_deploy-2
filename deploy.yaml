@@ -15,7 +15,7 @@ spec:
   template:
     metadata:
       creationTimestamp: null
-      labels:
+      labels: #pod laabel is a must bcx this will be used by service to create endpoints
         app: mbarbhui-cisco-app
     spec:
       containers:
