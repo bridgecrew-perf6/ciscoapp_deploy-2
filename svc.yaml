@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mbarbhuilb-final
+  name: mbarbhuilb-final
+spec:
+  ports:
+  - name: 1234-80
+    port: 1234
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: mbarbhuilb-final
+  type: ClusterIP
+status:
+  loadBalancer: {}
