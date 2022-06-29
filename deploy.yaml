@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mbarbhui-cisco-app
+  name: mbarbhui-cisco-app
+  namespace: mbarbhui-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mbarbhui-cisco-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mbarbhui-cisco-app
+    spec:
+      containers:
+      - image: saidul11/mbarbhuiwebapp:latest
+        name: mbarbhuiwebapp
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always #pull every time
+        resources: #restricting pod container resources
+          requests:
+            cpu: 100m
+            memory: 200M
+          limits:
+            cpu: 200m
+            memory: 300M
+status: {}
